@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+<AnchorPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="585.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.ViewStatisticFormController">
+    <stylesheets>
+        <URL value="@../css/main.css" />
+        <URL value="@../css/trac.css" />
+    </stylesheets>
+    <EmojiOneView glyphName="X" layoutX="990.0" layoutY="25.0" onMouseClicked="#btnClose" size="20" styleClass="icon-close" />
+    <Label fx:id="userSelected" layoutX="756.0" layoutY="7.0" prefHeight="41.0" prefWidth="215.0" styleClass="titleUserLabel" />
+    <JFXButton layoutX="29.0" layoutY="7.0" onAction="#btnView" prefHeight="41.0" prefWidth="146.0"
+               text="تحديث الرسم البياني"/>
+    <JFXButton fx:id="btnChartType" layoutX="221.0" layoutY="7.0" prefHeight="41.0" prefWidth="118.0" text="Total Stat" visible="false" />
+    <StackPane layoutY="58.0" prefHeight="429.0" prefWidth="1013.0">
+      <AnchorPane fx:id="barChartPane" prefHeight="520.0" prefWidth="1013.0">
+         <children>
+            <BarChart fx:id="statisticUserBarChart" layoutX="26.0" layoutY="14.0" prefHeight="458.0" prefWidth="973.0">
+               <xAxis>
+                  <CategoryAxis label="العمال" side="BOTTOM" fx:id="xAxis" />
+               </xAxis>
+               <yAxis>
+                   <NumberAxis fx:id="yAxis" label="نسبة الغيابات" minorTickCount="10" minorTickLength="1.0"
+                               prefHeight="398.0" prefWidth="65.0" side="LEFT" tickLabelGap="10.0" tickUnit="1.0"
+                               upperBound="10.0">
+                     <tickLabelFont>
+                        <Font name="System Bold" size="15.0" />
+                     </tickLabelFont>
+                  </NumberAxis>
+               </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+    </StackPane>
+    <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="714.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../icons/icons8_Student_Male_50px.png" />
+    </ImageView>
+</AnchorPane>
